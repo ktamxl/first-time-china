@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The app stack — First Time China</title>
+<meta name="description" content="Which apps to install before flying to China, the order to set them up, and how to use WeChat for payments, official accounts, mini programs and family group chats.">
+<style>
+:root{
+  --paper:#fbf8f1; --ink:#17150f; --muted:#5d574c; --rule:#e3dccd;
+  --red:#a3382a; --jade:#2c6a5b; --sand:#f3eee2; --card:#ffffff;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+img{max-width:100%;height:auto}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(163,56,42,.3)}
+a:hover{border-bottom-color:var(--red)}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.prose{max-width:720px}
+.wrap>.prose{margin-left:0;margin-right:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--rule);background:rgba(251,248,241,.92);position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px}
+.brand{white-space:nowrap;font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em;color:var(--ink);border:0}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:.82rem;letter-spacing:.02em;color:var(--muted);padding:7px 9px;border:0;border-radius:6px}
+.nav a:hover{background:var(--sand);color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--sand)}
+
+/* hero */
+.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px;font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+.lede{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.checked{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--jade);border:1px solid rgba(44,106,91,.35);background:rgba(44,106,91,.06);padding:5px 11px;border-radius:99px}
+.checked::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+/* sections */
+main{padding:8px 0 40px}
+section{padding:38px 0;border-bottom:1px solid var(--rule)}
+section:last-child{border-bottom:0}
+h2{font-family:var(--serif);font-weight:400;font-size:1.62rem;margin:0 0 14px;letter-spacing:-.005em}
+h3{font-size:1.02rem;margin:26px 0 8px;font-weight:650}
+h4{font-size:.92rem;margin:18px 0 6px;font-weight:650}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 7px}
+small{font-size:.82rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:28px 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:22px 0 6px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px}
+.card .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600}
+.card h3{margin:0 0 6px;font-size:1rem;font-family:var(--serif);font-weight:600}
+.card p{font-size:.9rem;color:var(--muted);margin:0}
+.card a{display:block;color:inherit;border:0}
+.card a:hover h3{color:var(--red)}
+
+/* callouts */
+.note,.warn{border-left:3px solid var(--jade);background:rgba(44,106,91,.055);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:.92rem}
+.warn{border-left-color:var(--red);background:rgba(163,56,42,.05)}
+.note strong,.warn strong{display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.note strong{color:var(--jade)} .warn strong{color:var(--red)}
+.note p:last-child,.warn p:last-child{margin:0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.89rem}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--sand);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:650}
+td .zh{white-space:nowrap}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:18px 0;counter-reset:s}
+.steps li{position:relative;padding:0 0 16px 42px;margin:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.78rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.steps li::after{content:"";position:absolute;left:12px;top:30px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child::after{display:none}
+.steps strong{font-weight:650}
+
+/* misc */
+.zh{font-size:.95em;color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--muted);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.toc{columns:2;column-gap:34px;margin:18px 0}
+.toc a{display:block;padding:5px 0;border:0;font-size:.92rem;color:var(--ink)}
+.toc a:hover{color:var(--red)}
+@media(max-width:620px){.toc{columns:1}}
+.next{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.next a{font-size:.9rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{max-width:520px;margin:0 0 8px}
+footer a{border-bottom-color:rgba(163,56,42,.25)}
+
+@media(max-width:700px){
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:2px;padding-top:10px;padding-bottom:8px}
+  .nav{width:100%}
+  .nav a{padding:6px 7px;font-size:.78rem}
+  table{font-size:.82rem}
+  th,td{padding:8px 9px}
+  .tablewrap{-webkit-overflow-scrolling:touch}
+}
+@media print{
+  .site-head,.nav,.next{display:none}
+  body{background:#fff;font-size:11pt}
+  a{color:#000;border:0}
+  section{page-break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">First Time <span>China</span></a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Start</a><a href="prepare.html">Prepare</a><a href="apps.html" aria-current="page">Apps</a><a href="money.html">Money</a><a href="transport.html">Getting around</a><a href="connected.html">Data &amp; power</a><a href="eating.html">Eating</a><a href="family.html">With kids</a><a href="extras.html">Extras</a><a href="emergencies.html">Help</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Chapter 01 · Apps</p>
+      <h1>The app stack</h1>
+      <p class="lede">Six apps do almost everything. Install them at home, on wifi, before you fly —
+    because the moment you need them most is the moment you have no data.</p>
+      <span class="checked">Checked November 2026</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+
+<section id="rule">
+  <h2>The rule that saves the first day</h2>
+  <p><strong>Install everything before you leave.</strong> Chinese apps are generally available in
+  overseas app stores, but downloading them after you land means relying on airport wifi, a local
+  number you may not have yet, and an app store that may not refresh. Do it at home, sign in once,
+  and confirm each app opens without a VPN.</p>
+  <div class="warn"><strong>The trap</strong><p>Some apps ask for a Chinese phone number at
+  registration. Register with your home number where allowed, and add the Chinese number later if
+  you buy a local SIM. If an app insists on a Chinese number, that is a signal to use the web
+  version or ask the hotel — not to abandon the plan.</p></div>
+</section>
+
+<section id="stack">
+  <h2>The six that matter</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>App</th><th>Chinese</th><th>What it does</th><th>English?</th></tr></thead>
+    <tbody>
+      <tr><td><strong>WeChat</strong></td><td class="zh">微信</td><td>Messages, payments, official accounts, mini programs, group chats. The closest thing to an operating system.</td><td>Partial</td></tr>
+      <tr><td><strong>Alipay</strong></td><td class="zh">支付宝</td><td>Payments, metro QR codes, transport, translation, small services. The most foreigner-friendly wallet.</td><td>Yes</td></tr>
+      <tr><td><strong>Trip.com</strong></td><td class="zh">携程</td><td>Trains, flights, hotels, airport transfers, eSIMs, attraction tickets, cross-border cars.</td><td>Yes</td></tr>
+      <tr><td><strong>DiDi</strong></td><td class="zh">滴滴出行</td><td>Ride-hailing, including taxis. English interface in the international version.</td><td>Yes</td></tr>
+      <tr><td><strong>Dianping</strong></td><td class="zh">大众点评</td><td>Restaurant discovery, reviews, top-dish lists, discount coupons, queues.</td><td>No</td></tr>
+      <tr><td><strong>Amap</strong></td><td class="zh">高德地图</td><td>Maps and navigation that actually work in China, including public toilets and metro exits.</td><td>Partial</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Two more, worth installing but not essential on day one: <strong>Meituan</strong>
+  <span class="zh">美团</span> for food delivery and deals, and <strong>12306</strong>
+  <span class="zh">铁路12306</span> — the official railway app — if you would rather book trains at the
+  source than through Trip.com.</p>
+</section>
+
+<section id="order">
+  <h2>The setup order</h2>
+  <ol class="steps">
+    <li><strong>Data first.</strong> Activate the eSIM or buy the SIM, and confirm the phone has
+    internet without wifi. Everything below needs a connection. <a href="connected.html">Data &amp; power →</a></li>
+    <li><strong>WeChat account.</strong> Register, set a password you will remember, and turn on
+    two-factor. Add your passport in the payment section even if you will mostly use Alipay —
+    some services only accept WeChat.</li>
+    <li><strong>Alipay, verified.</strong> Add the same Visa or Mastercard, complete identity
+    verification with your passport, and make one small payment before you fly if the app allows a
+    test. <a href="money.html">Money →</a></li>
+    <li><strong>Trip.com.</strong> Create the account, then add every traveller — passports and all —
+    before you book anything. This is the step people leave too late. <a href="transport.html#trains">Trains →</a></li>
+    <li><strong>DiDi.</strong> Sign in with a phone number, add a payment method, and set your home
+    address in English and Chinese.</li>
+    <li><strong>Dianping and Amap.</strong> Install, and set the city you are visiting. Both are
+    mostly Chinese; the <a href="#translate">translation routine</a> below is how you use them.</li>
+  </ol>
+</section>
+
+<section id="wechat">
+  <h2>WeChat: more than messages</h2>
+  <p>WeChat is where a Chinese business expects to talk to you. A hotel will send check-in details
+  through it, a restaurant will take a booking through it, a hospital will issue an appointment
+  through it. Treat it as infrastructure, not chat.</p>
+
+  <h3>Official accounts <span class="zh">公众号</span></h3>
+  <p>These are the business pages inside WeChat. To find one: open the search bar, type the company
+  name in Chinese or English, and look for the result with a verified tick and the company logo.
+  Follow it and look along the bottom menu for words like <span class="zh">预订</span> (reserve),
+  <span class="zh">服务</span> (service) or <span class="zh">会员</span> (membership).</p>
+  <p>This is how you reach a hotel's front desk, a restaurant's booking line, or a hospital's
+  appointment system without speaking Chinese on the phone. If a company has no official account,
+  the hotel concierge is the next best route — see <a href="eating.html#reserve">reservations</a>.</p>
+
+  <h3>Mini programs <span class="zh">小程序</span></h3>
+  <p>Apps that live inside WeChat and need no installation: metro tickets, museum bookings, queue
+  numbers, bike rental, power-bank rental. You reach them by scanning a QR code or searching inside
+  WeChat. They are usually Chinese-only, so keep the translation routine handy.</p>
+
+  <h3>Family group chat</h3>
+  <p>For a group of six or eight travelling together, a WeChat group is more practical than
+  international SMS: it is free over data, shares locations, and translates messages in place.
+  Create the group before the trip, add everyone by QR code, and pin it. Then agree on one rule:
+  <em>meet-up changes go in the group, not in a direct message</em>, so nobody is out of the loop.</p>
+  <div class="note"><strong>Why not just call?</strong><p>Voice calls over data are fine, but in a
+  noisy station or a restaurant, text plus a shared location is faster and leaves a record. Locals
+  will often reply by voice message rather than typing — that is normal, and WeChat will transcribe
+  some of it.</p></div>
+</section>
+
+<section id="translate">
+  <h2>Using Chinese-only apps</h2>
+  <p>Dianping and Meituan have no English interface and are unlikely to get one. The workaround is
+  mechanical, and once learned it takes seconds:</p>
+  <ol class="steps">
+    <li><strong>Use the app's own structure, not its words.</strong> In Dianping, the second tab from
+    the left is restaurants; the tab with a crown or flame is the ranking list. You can navigate by
+    position and icon without reading a single character.</li>
+    <li><strong>Screenshot, then translate.</strong> Both iOS and Google Translate will translate
+    text inside a photo. Point the camera at a menu, or translate the screenshot afterwards.</li>
+    <li><strong>Copy the Chinese name into a note.</strong> The single most useful habit on this
+    trip: keep a note with the Chinese name and address of every place you plan to visit, so you can
+    show it to a driver or a passer-by.</li>
+    <li><strong>Use WeChat's built-in translation.</strong> Long-press a received message and choose
+    translate; it handles most day-to-day Chinese.</li>
+  </ol>
+  <div class="note"><strong>Offline matters</strong><p>Download the offline language pack and
+  screenshot the addresses before you leave the hotel. Signal inside stations, basements and older
+  buildings is unreliable, and that is exactly where you will need the words.</p></div>
+</section>
+
+<section id="trip">
+  <h2>Trip.com's planner</h2>
+  <p>Trip.com includes an itinerary planner that builds a day-by-day plan for a city or a whole
+  route, with travel times between stops. It is genuinely useful for the part most people get wrong
+  — how much fits in a day — and you can use it without booking anything through them.</p>
+  <p>The practical combination: plan in Trip.com, book the pieces you want there (trains, transfers,
+  eSIM, attraction tickets) because they land in one itinerary, and book hotels wherever the rate is
+  best. The planner is a planning tool, not a contract.</p>
+  <div class="note"><strong>One caution</strong><p>Planner suggestions are generic. Treat the timings
+  as a starting point, then cut a third of them — the plan will still be too full for a family with
+  children.</p></div>
+</section>
+
+<section id="extras">
+  <h2>Apps worth knowing about, later</h2>
+  <ul>
+    <li><strong>PonyPilot+</strong> <span class="zh">小马智行</span> — robotaxi hailing in parts of Shenzhen. See <a href="transport.html#pony">Getting around</a>.</li>
+    <li><strong>Octopus</strong> <span class="zh">八達通</span> — the Hong Kong transit card, and it lives in Apple Wallet.</li>
+    <li><strong>MTR Mobile</strong> — Hong Kong metro routes and journey times.</li>
+    <li><strong>Airline apps</strong> — for seat changes and boarding passes when the airport wifi is struggling.</li>
+  </ul>
+  <p>Resist installing twenty apps. Six working ones beat twenty half-configured ones, and every
+  extra app is another password to recover at a bad moment.</p>
+</section>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+      <div class="next"><a href="money.html">Next: money that works →</a><a href="transport.html">Or jump to getting around →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>First Time China</strong> — a practical guide to Shanghai, Shenzhen and Hong Kong, written from a family trip with three generations: grandparents, parents and young children.</p>
+      <p>No advertising, no affiliate links, no sponsors. Prices are ranges rather than quotations, and anything that changes quickly is marked with the month it was checked.</p>
+    </div>
+    <div>
+      <p>Eating in these cities: <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a> — the restaurant list this guide points to.</p>
+      <p><a href="changelog.html">What changed, and when</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

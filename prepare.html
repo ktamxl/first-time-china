@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before you fly — First Time China</title>
+<meta name="description" content="Visa and entry routes, prescriptions, bank verification codes, insurance, public holidays and the twelve-item checklist for a first trip to China.">
+<style>
+:root{
+  --paper:#fbf8f1; --ink:#17150f; --muted:#5d574c; --rule:#e3dccd;
+  --red:#a3382a; --jade:#2c6a5b; --sand:#f3eee2; --card:#ffffff;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+img{max-width:100%;height:auto}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(163,56,42,.3)}
+a:hover{border-bottom-color:var(--red)}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.prose{max-width:720px}
+.wrap>.prose{margin-left:0;margin-right:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--rule);background:rgba(251,248,241,.92);position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px}
+.brand{white-space:nowrap;font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em;color:var(--ink);border:0}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:.82rem;letter-spacing:.02em;color:var(--muted);padding:7px 9px;border:0;border-radius:6px}
+.nav a:hover{background:var(--sand);color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--sand)}
+
+/* hero */
+.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px;font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+.lede{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.checked{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--jade);border:1px solid rgba(44,106,91,.35);background:rgba(44,106,91,.06);padding:5px 11px;border-radius:99px}
+.checked::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+/* sections */
+main{padding:8px 0 40px}
+section{padding:38px 0;border-bottom:1px solid var(--rule)}
+section:last-child{border-bottom:0}
+h2{font-family:var(--serif);font-weight:400;font-size:1.62rem;margin:0 0 14px;letter-spacing:-.005em}
+h3{font-size:1.02rem;margin:26px 0 8px;font-weight:650}
+h4{font-size:.92rem;margin:18px 0 6px;font-weight:650}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 7px}
+small{font-size:.82rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:28px 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:22px 0 6px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px}
+.card .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600}
+.card h3{margin:0 0 6px;font-size:1rem;font-family:var(--serif);font-weight:600}
+.card p{font-size:.9rem;color:var(--muted);margin:0}
+.card a{display:block;color:inherit;border:0}
+.card a:hover h3{color:var(--red)}
+
+/* callouts */
+.note,.warn{border-left:3px solid var(--jade);background:rgba(44,106,91,.055);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:.92rem}
+.warn{border-left-color:var(--red);background:rgba(163,56,42,.05)}
+.note strong,.warn strong{display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.note strong{color:var(--jade)} .warn strong{color:var(--red)}
+.note p:last-child,.warn p:last-child{margin:0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.89rem}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--sand);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:650}
+td .zh{white-space:nowrap}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:18px 0;counter-reset:s}
+.steps li{position:relative;padding:0 0 16px 42px;margin:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.78rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.steps li::after{content:"";position:absolute;left:12px;top:30px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child::after{display:none}
+.steps strong{font-weight:650}
+
+/* misc */
+.zh{font-size:.95em;color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--muted);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.toc{columns:2;column-gap:34px;margin:18px 0}
+.toc a{display:block;padding:5px 0;border:0;font-size:.92rem;color:var(--ink)}
+.toc a:hover{color:var(--red)}
+@media(max-width:620px){.toc{columns:1}}
+.next{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.next a{font-size:.9rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{max-width:520px;margin:0 0 8px}
+footer a{border-bottom-color:rgba(163,56,42,.25)}
+
+@media(max-width:700px){
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:2px;padding-top:10px;padding-bottom:8px}
+  .nav{width:100%}
+  .nav a{padding:6px 7px;font-size:.78rem}
+  table{font-size:.82rem}
+  th,td{padding:8px 9px}
+  .tablewrap{-webkit-overflow-scrolling:touch}
+}
+@media print{
+  .site-head,.nav,.next{display:none}
+  body{background:#fff;font-size:11pt}
+  a{color:#000;border:0}
+  section{page-break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">First Time <span>China</span></a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Start</a><a href="prepare.html" aria-current="page">Prepare</a><a href="apps.html">Apps</a><a href="money.html">Money</a><a href="transport.html">Getting around</a><a href="connected.html">Data &amp; power</a><a href="eating.html">Eating</a><a href="family.html">With kids</a><a href="extras.html">Extras</a><a href="emergencies.html">Help</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Chapter 00 · Before you fly</p>
+      <h1>Before you fly</h1>
+      <p class="lede">Everything on this page is cheaper and calmer to solve at home than at an airport
+    counter. Work through it a month out, not the night before.</p>
+      <span class="checked">Checked November 2026</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+
+<section id="checklist">
+  <h2>The checklist</h2>
+  <ul style="list-style:none;padding-left:0">
+    <li>☐ Passport valid for at least six months, with blank pages</li>
+    <li>☐ The right to enter: a visa, a visa-free scheme, or transit — checked against the official list</li>
+    <li>☐ Return or onward ticket, and the first hotel booking, both printable</li>
+    <li>☐ Travel insurance that explicitly covers mainland China</li>
+    <li>☐ Both payment apps installed and verified with your passport</li>
+    <li>☐ eSIM bought or roaming enabled, and tested</li>
+    <li>☐ Trip.com account with every traveller added, passports and all</li>
+    <li>☐ Prescriptions in original packaging, with a doctor's letter</li>
+    <li>☐ Home phone number kept active for bank verification codes</li>
+    <li>☐ Copies of every passport page — paper and cloud</li>
+    <li>☐ Hotel name and address saved in Chinese characters</li>
+    <li>☐ Your embassy or consulate's address and number saved offline</li>
+  </ul>
+</section>
+
+<section id="visa">
+  <h2>Getting in: three routes</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Route</th><th>Who it suits</th><th>What to know</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tourist visa (L)</strong></td><td>Anyone staying longer, or whose nationality is not on a visa-free list</td><td>Apply at a Chinese visa centre weeks ahead. Flights and hotels are usually required with the application.</td></tr>
+      <tr><td><strong>Visa-free entry</strong></td><td>Passport holders from countries with a unilateral visa-free arrangement</td><td>Time-limited and often for tourism or business only. The country list changes — verify before booking.</td></tr>
+      <tr><td><strong>240-hour visa-free transit</strong></td><td>Passport holders from the eligible countries, transiting to a third country</td><td>You must arrive from one country and depart to a different one, and stay inside the permitted region. Currently available to 57 nationalities.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="warn"><strong>Check this twice, and once more</strong><p>The transit list changed as recently as August 2026, when Kyrgyzstan and Vietnam were added. Rules that were true for a friend last year may not apply to you. Confirm on the National Immigration Administration site or your embassy's page before you pay for flights.</p></div>
+  <p>Two details that catch people: the passport must usually be valid for <strong>six months
+  beyond</strong> the trip, and transit routes require a genuinely onward ticket to a third country —
+  a return to where you came from does not qualify.</p>
+</section>
+
+<section id="meds">
+  <h2>Medication</h2>
+  <p>Bring prescriptions in their <strong>original packaging</strong>, with a letter from your doctor
+  naming the drug, the dose and the reason. Keep them in hand luggage, not checked bags.</p>
+  <div class="warn"><strong>Some common Western drugs are prohibited</strong><p>Amphetamine-based
+  medication for ADHD is the best-known example; several other controlled drugs are restricted or
+  banned outright. Arriving with them is a serious legal matter, not a paperwork problem. If you take
+  anything controlled, check with the Chinese embassy in your country before you fly — and if in
+  doubt, leave it at home and travel with a substitute your doctor approves.</p></div>
+</section>
+
+<section id="bank">
+  <h2>Bank codes and the two-factor trap</h2>
+  <p>Your bank will send a verification code by SMS at the worst possible moment — usually when you
+  are trying to unfreeze a card. If you replace your home SIM with a Chinese one, that code goes to a
+  number you can no longer receive.</p>
+  <ul>
+    <li><strong>Keep your home number alive</strong> on an eSIM or a second slot, with roaming for
+    incoming SMS only.</li>
+    <li><strong>Tell the bank you are travelling</strong>, and check that your card works abroad
+    before you leave.</li>
+    <li><strong>Install the bank's app and log in at home</strong> — some banks require a trusted
+    device before they will show anything.</li>
+    <li><strong>Carry a second card</strong> from a different issuer, kept separately.</li>
+  </ul>
+</section>
+
+<section id="insurance">
+  <h2>Insurance</h2>
+  <p>Check the policy wording for the word “China” specifically. Some travel policies exclude the
+  mainland, or cover it only for medical evacuation and not treatment. Save the assistance number as
+  a contact and a screenshot — not only in an email you cannot open offline.</p>
+</section>
+
+<section id="holidays">
+  <h2>The holiday calendar</h2>
+  <p>Chinese public holidays move the entire country at once, and transport sells out. This is the
+  single most useful planning fact in the guide.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Period</th><th>When</th><th>What it does to travel</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Spring Festival</strong></td><td>Late January to mid-February</td><td>The largest human migration on earth. Trains and flights sell out weeks ahead; cities empty and restaurants close. Avoid.</td></tr>
+      <tr><td><strong>Qingming</strong></td><td>Early April</td><td>A long weekend of grave-visiting. Regional trains busy.</td></tr>
+      <tr><td><strong>Labour Day</strong></td><td>1–5 May</td><td>A week of domestic travel. Attractions at capacity.</td></tr>
+      <tr><td><strong>Dragon Boat</strong></td><td>June</td><td>Short break; local festivals, busy riverside cities.</td></tr>
+      <tr><td><strong>Mid-Autumn</strong></td><td>September or early October</td><td>Short break; can merge with National Day.</td></tr>
+      <tr><td><strong>National Day</strong></td><td>1–7 October</td><td>The week to avoid. Hundreds of millions travel; trains, sights and hotels at their worst.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note"><strong>Why avoid October, specifically</strong><p>It is not only crowds. For
+  many workers this is the one week a year they can get home to their parents and children. A seat
+  you take is a seat someone else needed more. Going in a different week is better for you and
+  kinder to them.</p></div>
+</section>
+
+<section id="admin">
+  <h2>Arrival admin nobody mentions</h2>
+  <ul>
+    <li><strong>Hotel registration.</strong> Every foreign guest must be registered, and a minority of
+    hotels cannot or will not take foreign passports. Confirm before booking, and bring the passport
+    to check-in for every guest, including children.</li>
+    <li><strong>Security screening.</strong> Bags are scanned entering metros, railway stations, malls
+    and many museums. It is quick, but it adds ten minutes everywhere — build it into timings.</li>
+    <li><strong>Addresses run backwards.</strong> City, district, road, building, floor, room. When
+    talking to a driver, a landmark beats a street number: “opposite the mall” works, a postcode does
+    not.</li>
+    <li><strong>Tax refund.</strong> Foreign visitors can reclaim roughly 11% VAT on purchases above a
+    minimum spend per store, claimed at the airport before departure with the passport and receipts.
+    Most visitors never bother; on a large purchase it is worth the queue.</li>
+  </ul>
+</section>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+      <div class="next"><a href="apps.html">Next: the app stack →</a><a href="money.html">Or jump to money →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>First Time China</strong> — a practical guide to Shanghai, Shenzhen and Hong Kong, written from a family trip with three generations: grandparents, parents and young children.</p>
+      <p>No advertising, no affiliate links, no sponsors. Prices are ranges rather than quotations, and anything that changes quickly is marked with the month it was checked.</p>
+    </div>
+    <div>
+      <p>Eating in these cities: <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a> — the restaurant list this guide points to.</p>
+      <p><a href="changelog.html">What changed, and when</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

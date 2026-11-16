@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting around — First Time China</title>
+<meta name="description" content="Metro, DiDi, robotaxis, trains booked on Trip.com, airport transfers and cross-border vans between Hong Kong and the mainland.">
+<style>
+:root{
+  --paper:#fbf8f1; --ink:#17150f; --muted:#5d574c; --rule:#e3dccd;
+  --red:#a3382a; --jade:#2c6a5b; --sand:#f3eee2; --card:#ffffff;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+img{max-width:100%;height:auto}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(163,56,42,.3)}
+a:hover{border-bottom-color:var(--red)}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.prose{max-width:720px}
+.wrap>.prose{margin-left:0;margin-right:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--rule);background:rgba(251,248,241,.92);position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px}
+.brand{white-space:nowrap;font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em;color:var(--ink);border:0}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:.82rem;letter-spacing:.02em;color:var(--muted);padding:7px 9px;border:0;border-radius:6px}
+.nav a:hover{background:var(--sand);color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--sand)}
+
+/* hero */
+.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px;font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+.lede{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.checked{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--jade);border:1px solid rgba(44,106,91,.35);background:rgba(44,106,91,.06);padding:5px 11px;border-radius:99px}
+.checked::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+/* sections */
+main{padding:8px 0 40px}
+section{padding:38px 0;border-bottom:1px solid var(--rule)}
+section:last-child{border-bottom:0}
+h2{font-family:var(--serif);font-weight:400;font-size:1.62rem;margin:0 0 14px;letter-spacing:-.005em}
+h3{font-size:1.02rem;margin:26px 0 8px;font-weight:650}
+h4{font-size:.92rem;margin:18px 0 6px;font-weight:650}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 7px}
+small{font-size:.82rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:28px 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:22px 0 6px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px}
+.card .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600}
+.card h3{margin:0 0 6px;font-size:1rem;font-family:var(--serif);font-weight:600}
+.card p{font-size:.9rem;color:var(--muted);margin:0}
+.card a{display:block;color:inherit;border:0}
+.card a:hover h3{color:var(--red)}
+
+/* callouts */
+.note,.warn{border-left:3px solid var(--jade);background:rgba(44,106,91,.055);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:.92rem}
+.warn{border-left-color:var(--red);background:rgba(163,56,42,.05)}
+.note strong,.warn strong{display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.note strong{color:var(--jade)} .warn strong{color:var(--red)}
+.note p:last-child,.warn p:last-child{margin:0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.89rem}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--sand);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:650}
+td .zh{white-space:nowrap}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:18px 0;counter-reset:s}
+.steps li{position:relative;padding:0 0 16px 42px;margin:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.78rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.steps li::after{content:"";position:absolute;left:12px;top:30px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child::after{display:none}
+.steps strong{font-weight:650}
+
+/* misc */
+.zh{font-size:.95em;color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--muted);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.toc{columns:2;column-gap:34px;margin:18px 0}
+.toc a{display:block;padding:5px 0;border:0;font-size:.92rem;color:var(--ink)}
+.toc a:hover{color:var(--red)}
+@media(max-width:620px){.toc{columns:1}}
+.next{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.next a{font-size:.9rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{max-width:520px;margin:0 0 8px}
+footer a{border-bottom-color:rgba(163,56,42,.25)}
+
+@media(max-width:700px){
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:2px;padding-top:10px;padding-bottom:8px}
+  .nav{width:100%}
+  .nav a{padding:6px 7px;font-size:.78rem}
+  table{font-size:.82rem}
+  th,td{padding:8px 9px}
+  .tablewrap{-webkit-overflow-scrolling:touch}
+}
+@media print{
+  .site-head,.nav,.next{display:none}
+  body{background:#fff;font-size:11pt}
+  a{color:#000;border:0}
+  section{page-break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">First Time <span>China</span></a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Start</a><a href="prepare.html">Prepare</a><a href="apps.html">Apps</a><a href="money.html">Money</a><a href="transport.html" aria-current="page">Getting around</a><a href="connected.html">Data &amp; power</a><a href="eating.html">Eating</a><a href="family.html">With kids</a><a href="extras.html">Extras</a><a href="emergencies.html">Help</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Chapter 03 · Getting around</p>
+      <h1>Getting around</h1>
+      <p class="lede">Three cities, four modes: metro for the city, DiDi for the last mile, rail for the
+    long jumps, and a cross-border van when you have luggage and children.</p>
+      <span class="checked">Checked November 2026</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+
+<section id="airports">
+  <h2>Landing</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Airport</th><th>Into town</th><th>Time</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Shanghai Pudong</strong> <span class="zh">浦东</span></td><td>Maglev to Longyang Road, then metro; or metro Line 2; or taxi</td><td>45–70 min</td><td>The maglev is fast but drops you short of the centre. With luggage and children, a taxi or DiDi is worth it.</td></tr>
+      <tr><td><strong>Shanghai Hongqiao</strong> <span class="zh">虹桥</span></td><td>Metro Line 2 or 10; taxi</td><td>30–50 min</td><td>Closer to the city, and attached to the railway station — useful if you are connecting.</td></tr>
+      <tr><td><strong>Shenzhen Bao'an</strong> <span class="zh">宝安</span></td><td>Metro Line 11; taxi or DiDi</td><td>35–55 min</td><td>Line 11 is quick to Futian. For Nanshan, a car is simpler with bags.</td></tr>
+      <tr><td><strong>Hong Kong</strong> <span class="zh">香港</span></td><td>Airport Express; taxi; bus</td><td>25–45 min</td><td>The Airport Express is the easiest arrival in Asia — 24 minutes to Central, luggage racks, no stairs.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note"><strong>Official taxi rank, always</strong><p>Ignore anyone approaching you inside the terminal offering a car. Follow the signs to the official taxi queue, or order a DiDi to the designated pickup point. The licensed queue is cheaper and regulated.</p></div>
+  <p><strong>Pre-booked pickup</strong> is the calmest arrival with children: a hotel car, a Trip.com
+  airport transfer, or a cross-border van if you are heading straight to another city. The driver
+  meets you inside arrivals with a name board, which removes the taxi queue, the address problem and
+  the luggage problem in one move. Book it a few days ahead and give the flight number.</p>
+</section>
+
+<section id="metro">
+  <h2>The metro</h2>
+  <p>Every city here has a metro that is clean, cheap, signed in English, and faster than a car in
+  traffic. Three ways to pay:</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Method</th><th>How</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Single ticket</strong></td><td>Buy at a machine — English button top right — tap in, tap out, keep the token.</td><td>One-off journeys; children without phones.</td></tr>
+      <tr><td><strong>QR code</strong></td><td>Alipay → Transport, or WeChat → Services → Transport. Scan at the gate.</td><td>Everyone with a phone. Works in all three cities with the right city selected.</td></tr>
+      <tr><td><strong>Transit card</strong></td><td>Shanghai card, Shenzhen Tong <span class="zh">深圳通</span>, Octopus <span class="zh">八達通</span>. Buy at station service desks.</td><td>Families, repeated journeys, children.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Cards in your phone</h3>
+  <p>Hong Kong's Octopus can be added to Apple Wallet and topped up from a foreign card — the
+  easiest transit experience on the trip. Shanghai's public transport card can also be added to
+  Apple Wallet; Shenzhen is simplest with a QR code or a physical card. On Android, do not assume
+  wallet support for Chinese transit cards — use the QR route instead.</p>
+
+  <h3 id="tickets">Children on the metro</h3>
+  <p>Children below roughly <strong>1.2–1.3 metres</strong> usually ride free, admitted through the
+  wide staffed gate. Above that height they need a child ticket, which you buy at a machine or from
+  the service desk. The rule varies by city and is measured at the gate, so do not pre-buy.</p>
+  <p>If you have a stroller, look for the lift symbol on station maps before you enter — not every
+  exit has one, and carrying a stroller up a long staircase in a crowd is the single most tiring
+  thing you will do all day.</p>
+</section>
+
+<section id="didi">
+  <h2>DiDi <span class="zh">滴滴出行</span></h2>
+  <p>DiDi is the local equivalent of Uber, and the international version has an English interface
+  and accepts foreign cards. The flow is the same as at home — set the pin, confirm the car,
+  watch it arrive — with three local differences:</p>
+  <ul>
+    <li><strong>The driver may call.</strong> You will not understand the call. Send a message in the
+    app instead; the app offers canned phrases and translates replies.</li>
+    <li><strong>Check the plate, not the model.</strong> Match the licence plate on the app to the
+    car at the kerb before you get in.</li>
+    <li><strong>Pickup points are specific.</strong> At malls and stations, the app names a gate or a
+    level. Walk to it — a driver will not circle for you.</li>
+  </ul>
+  <p>For a family, choose the larger vehicle class when it is offered. Four adults plus two children
+  does not fit in a standard car with luggage, whatever the app suggests.</p>
+</section>
+
+<section id="pony">
+  <h2>Robotaxis in Shenzhen</h2>
+  <p>Parts of Shenzhen — notably Nanshan, around Houhai and the bay — run a public robotaxi service
+  operated by Pony.ai, booked through its own app <span class="zh">小马智行</span>. The cars drive
+  themselves within a geofenced area, and the app shows you whether your pickup and drop-off are
+  inside it before you book.</p>
+  <ul>
+    <li><strong>Register before you rely on it.</strong> Sign-up may ask for a Chinese mobile number
+    and identity verification; do this while you still have time to fall back.</li>
+    <li><strong>Check the geofence.</strong> Airport runs and cross-district trips are usually outside
+    it. Treat it as a city service, not a transfer service.</li>
+    <li><strong>Have DiDi ready.</strong> If no car is available, or the route leaves the zone, the
+    app will simply find nothing.</li>
+  </ul>
+  <div class="note"><strong>Worth doing once</strong><p>For children — and adults — a driverless car
+  is the memorable half-hour of a Shenzhen day. Book it deliberately, not as transport you depend on.</p></div>
+</section>
+
+<section id="trains">
+  <h2>Trains, booked on Trip.com</h2>
+  <p>China's high-speed rail is the best way between cities: 350 km/h, on time, and far more
+  comfortable than flying for the distances on this itinerary. Trip.com sells the same seats as the
+  official railway, in English, with a small booking fee.</p>
+
+  <h3>Add every traveller first</h3>
+  <p>This is the step that catches families. Before booking, open <em>Profile → Travellers</em> and
+  add each person separately, with:</p>
+  <ul>
+    <li><strong>Full name exactly as printed in the passport</strong> — surname and given names in the
+    right boxes. A middle name omitted or added is a mismatch at the gate.</li>
+    <li><strong>Passport number, nationality, date of birth, expiry.</strong></li>
+    <li><strong>A separate profile for each child</strong>, including infants. A child cannot travel
+    on an adult's profile.</li>
+  </ul>
+  <p>Do this at home, for all eight people, before any booking. Changing a traveller's passport
+  details after a ticket is issued is not a simple edit — it usually means a refund and a rebook.</p>
+
+  <h3>Booking and boarding</h3>
+  <ol class="steps">
+    <li><strong>Search by station, not city.</strong> Shanghai has several; the high-speed trains
+    leave from Hongqiao <span class="zh">上海虹桥</span>. Shenzhen's main long-distance station is
+    Shenzhen North <span class="zh">深圳北</span>.</li>
+    <li><strong>Choose a class.</strong> Second class is 3+2 seating and perfectly comfortable; first
+    is 2+2 and quieter; business is a different product entirely. For a family with children, first
+    class is often worth the modest premium.</li>
+    <li><strong>Pay and keep the confirmation.</strong> The ticket is electronic and tied to the
+    passport — there is nothing to collect in most cases.</li>
+    <li><strong>Arrive 45–60 minutes early.</strong> Big stations are airports: security, queues, and
+    long walks to the platform. The gate closes a few minutes before departure.</li>
+    <li><strong>Use the passport at the gate.</strong> If the automatic gate rejects it, go to the
+    staffed lane beside it — this is routine for foreign passports, not a problem with your ticket.</li>
+  </ol>
+  <div class="warn"><strong>Luggage</strong><p>There is no strict weight limit on high-speed trains,
+  but racks are overhead and at the carriage ends. Two large cases per family is manageable; four is
+  not. Ship luggage ahead if you are moving between cities with a lot of bags.</p></div>
+</section>
+
+<section id="crossborder">
+  <h2>Hong Kong ↔ the mainland</h2>
+  <p>Four ways across, in ascending order of ease with children and luggage:</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Route</th><th>How it works</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>East Rail to Lo Wu</strong> <span class="zh">羅湖</span></td><td>MTR to the border, walk through both immigration halls, join the Shenzhen metro.</td><td>Cheap, frequent, no booking. Bad with big luggage.</td></tr>
+      <tr><td><strong>High-speed rail</strong></td><td>West Kowloon <span class="zh">香港西九龍</span> to Shenzhen North or Futian, 14–20 minutes, both checks inside the station.</td><td>Fastest city-centre to city-centre.</td></tr>
+      <tr><td><strong>Cross-border coach</strong></td><td>Direct coaches between Hong Kong and Shenzhen hotels or the airport.</td><td>Fixed timings, cheap, less flexible.</td></tr>
+      <tr><td><strong>Cross-border van</strong> <span class="zh">兩地牌</span></td><td>A licensed Hong Kong–mainland vehicle collects you at your door, drives through Shenzhen Bay Port, and drops you at the other address. You usually stay in the vehicle for immigration.</td><td>Families with luggage, airport pickups, door-to-door.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Booking a cross-border van</h3>
+  <p>Book through the hotel concierge, a Hong Kong travel agency, or Trip.com's cross-border car
+  service. Give them: pickup address, drop-off address, date and time, number of passengers,
+  luggage count, and every passenger's name as printed in the passport. Expect roughly
+  <strong>HK$700–1,500 per vehicle</strong> depending on route and time; the driver handles the
+  vehicle paperwork, you handle your own immigration.</p>
+  <div class="note"><strong>Why it is worth it with children</strong><p>The van removes two taxi
+  rides, a station walk, and a queue with suitcases. On a day when you are changing cities, that is
+  several hours of your life back — and the child car seat question is easier to arrange in advance.</p></div>
+</section>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+      <div class="next"><a href="connected.html">Next: data and power →</a><a href="eating.html">Or jump to eating →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>First Time China</strong> — a practical guide to Shanghai, Shenzhen and Hong Kong, written from a family trip with three generations: grandparents, parents and young children.</p>
+      <p>No advertising, no affiliate links, no sponsors. Prices are ranges rather than quotations, and anything that changes quickly is marked with the month it was checked.</p>
+    </div>
+    <div>
+      <p>Eating in these cities: <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a> — the restaurant list this guide points to.</p>
+      <p><a href="changelog.html">What changed, and when</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travelling with children — First Time China</title>
+<meta name="description" content="Restrooms, metro tickets, pacing, food, medical care and the practical kit for a family trip to Shanghai, Shenzhen and Hong Kong.">
+<style>
+:root{
+  --paper:#fbf8f1; --ink:#17150f; --muted:#5d574c; --rule:#e3dccd;
+  --red:#a3382a; --jade:#2c6a5b; --sand:#f3eee2; --card:#ffffff;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+img{max-width:100%;height:auto}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(163,56,42,.3)}
+a:hover{border-bottom-color:var(--red)}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.prose{max-width:720px}
+.wrap>.prose{margin-left:0;margin-right:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--rule);background:rgba(251,248,241,.92);position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px}
+.brand{white-space:nowrap;font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em;color:var(--ink);border:0}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:.82rem;letter-spacing:.02em;color:var(--muted);padding:7px 9px;border:0;border-radius:6px}
+.nav a:hover{background:var(--sand);color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--sand)}
+
+/* hero */
+.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px;font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+.lede{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.checked{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--jade);border:1px solid rgba(44,106,91,.35);background:rgba(44,106,91,.06);padding:5px 11px;border-radius:99px}
+.checked::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+/* sections */
+main{padding:8px 0 40px}
+section{padding:38px 0;border-bottom:1px solid var(--rule)}
+section:last-child{border-bottom:0}
+h2{font-family:var(--serif);font-weight:400;font-size:1.62rem;margin:0 0 14px;letter-spacing:-.005em}
+h3{font-size:1.02rem;margin:26px 0 8px;font-weight:650}
+h4{font-size:.92rem;margin:18px 0 6px;font-weight:650}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 7px}
+small{font-size:.82rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:28px 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:22px 0 6px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px}
+.card .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600}
+.card h3{margin:0 0 6px;font-size:1rem;font-family:var(--serif);font-weight:600}
+.card p{font-size:.9rem;color:var(--muted);margin:0}
+.card a{display:block;color:inherit;border:0}
+.card a:hover h3{color:var(--red)}
+
+/* callouts */
+.note,.warn{border-left:3px solid var(--jade);background:rgba(44,106,91,.055);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:.92rem}
+.warn{border-left-color:var(--red);background:rgba(163,56,42,.05)}
+.note strong,.warn strong{display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.note strong{color:var(--jade)} .warn strong{color:var(--red)}
+.note p:last-child,.warn p:last-child{margin:0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.89rem}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--sand);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:650}
+td .zh{white-space:nowrap}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:18px 0;counter-reset:s}
+.steps li{position:relative;padding:0 0 16px 42px;margin:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.78rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.steps li::after{content:"";position:absolute;left:12px;top:30px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child::after{display:none}
+.steps strong{font-weight:650}
+
+/* misc */
+.zh{font-size:.95em;color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--muted);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.toc{columns:2;column-gap:34px;margin:18px 0}
+.toc a{display:block;padding:5px 0;border:0;font-size:.92rem;color:var(--ink)}
+.toc a:hover{color:var(--red)}
+@media(max-width:620px){.toc{columns:1}}
+.next{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.next a{font-size:.9rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{max-width:520px;margin:0 0 8px}
+footer a{border-bottom-color:rgba(163,56,42,.25)}
+
+@media(max-width:700px){
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:2px;padding-top:10px;padding-bottom:8px}
+  .nav{width:100%}
+  .nav a{padding:6px 7px;font-size:.78rem}
+  table{font-size:.82rem}
+  th,td{padding:8px 9px}
+  .tablewrap{-webkit-overflow-scrolling:touch}
+}
+@media print{
+  .site-head,.nav,.next{display:none}
+  body{background:#fff;font-size:11pt}
+  a{color:#000;border:0}
+  section{page-break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">First Time <span>China</span></a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Start</a><a href="prepare.html">Prepare</a><a href="apps.html">Apps</a><a href="money.html">Money</a><a href="transport.html">Getting around</a><a href="connected.html">Data &amp; power</a><a href="eating.html">Eating</a><a href="family.html" aria-current="page">With kids</a><a href="extras.html">Extras</a><a href="emergencies.html">Help</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Chapter 06 · With kids</p>
+      <h1>Travelling with children</h1>
+      <p class="lede">Three generations in one trip works if the day is built around one anchor, one meal,
+    and one rest. Everything else is optional.</p>
+      <span class="checked">Checked November 2026</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+
+<section id="pacing">
+  <h2>Pacing</h2>
+  <p>The failure mode is not a bad attraction; it is a schedule with four of them. Chinese cities are
+  large, the walking is real, and the heat in summer is genuinely punishing. Build each day around
+  <strong>one anchor</strong> — a park, a museum, a neighbourhood — and let the rest be negotiable.</p>
+  <ul>
+    <li><strong>Morning is the reliable window.</strong> Children are at their best, queues are
+    shortest, and the light is kinder.</li>
+    <li><strong>Plan a midday retreat.</strong> Back to the hotel, or a long lunch in air conditioning.
+    This is normal local practice, not a concession.</li>
+    <li><strong>One big meal out per day.</strong> The other meal can be noodles, dumplings or
+    room service.</li>
+    <li><strong>Alternate days.</strong> A big day, then a light one. Three big days in a row breaks
+    the grandparents before it breaks the children.</li>
+  </ul>
+</section>
+
+<section id="restrooms">
+  <h2>Finding a restroom</h2>
+  <p>This is the most-asked practical question, and the answer is a short list of reliable places:</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Where</th><th>How good</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Shopping malls</strong></td><td>Best</td><td>Clean, free, usually with a baby room. Every large mall has them, on every floor.</td></tr>
+      <tr><td><strong>Metro stations</strong></td><td>Usually good</td><td>Not every station, and sometimes outside the fare gates — ask staff.</td></tr>
+      <tr><td><strong>Convenience stores</strong></td><td>Hit and miss</td><td>Some have a toilet for customers; ask.</td></tr>
+      <tr><td><strong>Hotels</strong></td><td>Reliable</td><td>Walk in and use the lobby facilities. Nobody will stop you.</td></tr>
+      <tr><td><strong>Parks and streets</strong></td><td>Variable</td><td>Public toilets exist but quality varies. Amap lists them.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Two habits: carry tissue, because many toilets do not supply it, and expect squat toilets
+  outside malls and hotels. Teach children the stance before the trip rather than in the moment.</p>
+  <p>In Amap <span class="zh">高德地图</span>, search <span class="zh">公共厕所</span> — public
+  toilet — and it will show the nearest ones on the map.</p>
+</section>
+
+<section id="tickets">
+  <h2>Metro and attraction tickets</h2>
+  <p>Children under roughly 1.2–1.3 metres ride the metro free, through the wide staffed gate. Above
+  that, buy a child ticket at a machine or the service desk — you cannot tap them through on your
+  phone. The height is measured at the gate, so do not buy in advance.</p>
+  <p>For attractions, book on Trip.com or the venue's WeChat mini program. Many museums now require a
+  timed reservation with a passport number, and popular ones sell out days ahead in school holidays.
+  Book the anchor, not the whole day.</p>
+</section>
+
+<section id="food">
+  <h2>Food and water</h2>
+  <ul>
+    <li><strong>Bottled water</strong> for drinking; tap water is not for drinking anywhere on the
+    mainland. Hotels provide kettles and bottled water.</li>
+    <li><strong>Hot food, peeled fruit, familiar staples.</strong> Noodles, rice, dumplings, steamed
+    buns and roast meats are safe bets for cautious eaters.</li>
+    <li><strong>Mild by default.</strong> Ask for <span class="zh">不要辣</span> and order one
+    plain dish per meal — steamed egg, greens, plain rice.</li>
+    <li><strong>Hong Kong</strong> is easier: tap water is drinkable and the food safety standard is
+    familiar.</li>
+  </ul>
+</section>
+
+<section id="medical">
+  <h2>If someone gets sick</h2>
+  <p>For anything minor, a pharmacy <span class="zh">药店</span> is on most streets and the staff will
+  help if you show symptoms in translation. For anything serious, go to an international clinic in
+  Shanghai or Shenzhen, or a private hospital in Hong Kong — they have English-speaking staff and
+  take international insurance. Ask your hotel to call ahead; walk-in registration at a public
+  hospital is a long process in Chinese.</p>
+  <div class="note"><strong>Before you go</strong><p>Check that your travel insurance covers mainland
+  China specifically — some policies exclude it — and save the insurer's assistance number offline,
+  not just in your email.</p></div>
+</section>
+
+<section id="kit">
+  <h2>The family kit</h2>
+  <ul>
+    <li>Tissue packs and hand sanitiser — one per bag.</li>
+    <li>A refillable water bottle per child, filled from hotel-supplied water.</li>
+    <li>Snacks from home for the train and the queue.</li>
+    <li>A light folding stroller if the child is under four; lifts exist but are not everywhere.</li>
+    <li>Copies of every passport, on paper, in a bag that stays with an adult.</li>
+    <li>A written card with the hotel address in Chinese, in each adult's pocket.</li>
+  </ul>
+</section>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+      <div class="next"><a href="changelog.html">Next: what changed →</a><a href="eating.html">Back to eating →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>First Time China</strong> — a practical guide to Shanghai, Shenzhen and Hong Kong, written from a family trip with three generations: grandparents, parents and young children.</p>
+      <p>No advertising, no affiliate links, no sponsors. Prices are ranges rather than quotations, and anything that changes quickly is marked with the month it was checked.</p>
+    </div>
+    <div>
+      <p>Eating in these cities: <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a> — the restaurant list this guide points to.</p>
+      <p><a href="changelog.html">What changed, and when</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

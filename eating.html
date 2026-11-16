@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eating well — First Time China</title>
+<meta name="description" content="How to use Dianping to find top restaurants, read the top-dish list, find discount coupons, reserve a table or a private room, and where Michelin and Black Pearl fit in.">
+<style>
+:root{
+  --paper:#fbf8f1; --ink:#17150f; --muted:#5d574c; --rule:#e3dccd;
+  --red:#a3382a; --jade:#2c6a5b; --sand:#f3eee2; --card:#ffffff;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+img{max-width:100%;height:auto}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(163,56,42,.3)}
+a:hover{border-bottom-color:var(--red)}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.prose{max-width:720px}
+.wrap>.prose{margin-left:0;margin-right:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--rule);background:rgba(251,248,241,.92);position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px}
+.brand{white-space:nowrap;font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em;color:var(--ink);border:0}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:.82rem;letter-spacing:.02em;color:var(--muted);padding:7px 9px;border:0;border-radius:6px}
+.nav a:hover{background:var(--sand);color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--sand)}
+
+/* hero */
+.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px;font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+.lede{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.checked{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--jade);border:1px solid rgba(44,106,91,.35);background:rgba(44,106,91,.06);padding:5px 11px;border-radius:99px}
+.checked::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+/* sections */
+main{padding:8px 0 40px}
+section{padding:38px 0;border-bottom:1px solid var(--rule)}
+section:last-child{border-bottom:0}
+h2{font-family:var(--serif);font-weight:400;font-size:1.62rem;margin:0 0 14px;letter-spacing:-.005em}
+h3{font-size:1.02rem;margin:26px 0 8px;font-weight:650}
+h4{font-size:.92rem;margin:18px 0 6px;font-weight:650}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 7px}
+small{font-size:.82rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:28px 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:22px 0 6px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px}
+.card .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600}
+.card h3{margin:0 0 6px;font-size:1rem;font-family:var(--serif);font-weight:600}
+.card p{font-size:.9rem;color:var(--muted);margin:0}
+.card a{display:block;color:inherit;border:0}
+.card a:hover h3{color:var(--red)}
+
+/* callouts */
+.note,.warn{border-left:3px solid var(--jade);background:rgba(44,106,91,.055);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:.92rem}
+.warn{border-left-color:var(--red);background:rgba(163,56,42,.05)}
+.note strong,.warn strong{display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.note strong{color:var(--jade)} .warn strong{color:var(--red)}
+.note p:last-child,.warn p:last-child{margin:0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.89rem}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--sand);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:650}
+td .zh{white-space:nowrap}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:18px 0;counter-reset:s}
+.steps li{position:relative;padding:0 0 16px 42px;margin:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.78rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.steps li::after{content:"";position:absolute;left:12px;top:30px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child::after{display:none}
+.steps strong{font-weight:650}
+
+/* misc */
+.zh{font-size:.95em;color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--muted);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.toc{columns:2;column-gap:34px;margin:18px 0}
+.toc a{display:block;padding:5px 0;border:0;font-size:.92rem;color:var(--ink)}
+.toc a:hover{color:var(--red)}
+@media(max-width:620px){.toc{columns:1}}
+.next{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.next a{font-size:.9rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{max-width:520px;margin:0 0 8px}
+footer a{border-bottom-color:rgba(163,56,42,.25)}
+
+@media(max-width:700px){
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:2px;padding-top:10px;padding-bottom:8px}
+  .nav{width:100%}
+  .nav a{padding:6px 7px;font-size:.78rem}
+  table{font-size:.82rem}
+  th,td{padding:8px 9px}
+  .tablewrap{-webkit-overflow-scrolling:touch}
+}
+@media print{
+  .site-head,.nav,.next{display:none}
+  body{background:#fff;font-size:11pt}
+  a{color:#000;border:0}
+  section{page-break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">First Time <span>China</span></a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Start</a><a href="prepare.html">Prepare</a><a href="apps.html">Apps</a><a href="money.html">Money</a><a href="transport.html">Getting around</a><a href="connected.html">Data &amp; power</a><a href="eating.html" aria-current="page">Eating</a><a href="family.html">With kids</a><a href="extras.html">Extras</a><a href="emergencies.html">Help</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Chapter 05 · Eating</p>
+      <h1>Eating well, without reading Chinese</h1>
+      <p class="lede">The best restaurant in a Chinese city is rarely the one with an English menu. It is the
+    one near the top of a local ranking, with a queue of people who live there.</p>
+      <span class="checked">Checked November 2026</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+
+<section id="dianping">
+  <h2>The Dianping routine</h2>
+  <p>Dianping <span class="zh">大众点评</span> is the restaurant app Chinese diners actually use — part
+  review site, part booking system, part discount marketplace. It has no English interface, and you
+  do not need one if you follow the structure rather than the words.</p>
+  <ol class="steps">
+    <li><strong>Set the city.</strong> Top-left, the city name. Do this first or you will be reading
+    about the wrong place.</li>
+    <li><strong>Open the food tab.</strong> The second tab along the bottom. Within it, look for the
+    ranking entries — <span class="zh">热门榜</span> (trending), <span class="zh">必吃榜</span>
+    (must-eat) or <span class="zh">好评榜</span> (top rated). These are curated by the platform, not
+    by advertisers, and they are a good shortlist.</li>
+    <li><strong>Open a restaurant and find the dishes.</strong> Inside the listing, the
+    <span class="zh">推荐菜</span> section lists the dishes other diners ordered most, usually with a
+    photo and a count. Order from that list and you will eat what the kitchen is good at.</li>
+    <li><strong>Look for a coupon.</strong> <span class="zh">代金券</span> is a prepaid voucher —
+    pay ¥90 for ¥100 of food, or a set menu at a fixed price. Buy it in the app and show the code
+    when you pay. This is where a family meal gets noticeably cheaper.</li>
+    <li><strong>Join the queue remotely.</strong> <span class="zh">排队</span> takes a number in the
+    app before you arrive. On a weekend evening this can save an hour of standing outside.</li>
+  </ol>
+  <div class="note"><strong>Translation, quickly</strong><p>Screenshot the listing and translate the
+  image, or copy the Chinese name into a note. Show the name — not the English — to the taxi driver.</p></div>
+</section>
+
+<section id="reserve">
+  <h2>Reservations</h2>
+  <p>Most mid-range restaurants do not take bookings at all: you turn up and queue. For the places
+  worth planning around, there are four routes, in order of reliability:</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Route</th><th>How</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Hotel concierge</strong></td><td>Ask the front desk, in person or by WeChat, a day or two ahead.</td><td>Best for Michelin and Black Pearl rooms, and for a table of eight. Hotels have relationships; you do not.</td></tr>
+      <tr><td><strong>The restaurant's WeChat account</strong></td><td>Search the restaurant name in WeChat, follow the official account, use the booking menu.</td><td>Works for groups with a booking system. Chinese-only, but the menu structure is obvious.</td></tr>
+      <tr><td><strong>Dianping queue</strong></td><td>Take a number remotely, then arrive close to your slot.</td><td>Not a true reservation — miss your number and you start again.</td></tr>
+      <tr><td><strong>Phone</strong></td><td>Ask the hotel to call on your behalf.</td><td>Only worth attempting with a Chinese speaker.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Expect a deposit for popular places at peak times, especially weekends and public holidays. The
+  concierge will usually handle it against your room or ask for a card.</p>
+</section>
+
+<section id="private">
+  <h2>Private rooms <span class="zh">包间</span></h2>
+  <p>Most Chinese restaurants of any size have private rooms upstairs. They are not only for
+  banquets: a family of four with small children can book one, and it changes the meal.</p>
+  <ul>
+    <li><strong>Why it helps:</strong> children can move around without disturbing a room; the noise
+    level drops; you can leave the table without losing it; and the service is more attentive.</li>
+    <li><strong>What it costs:</strong> usually a minimum spend rather than a room fee — a few hundred
+    yuan per person at mid-range places, more at the top end. For a family that was going to order
+    properly anyway, the difference is small.</li>
+    <li><strong>How to ask:</strong> “<span class="zh">有包间吗？</span>” — <em>do you have a private
+    room?</em> Show it written down, or ask the concierge to arrange it.</li>
+  </ul>
+  <div class="note"><strong>Worth it with children</strong><p>A private room turns a two-hour dinner
+  from a negotiation into a relaxed evening. On a trip where every meal is in a loud room, book one
+  or two and notice the difference.</p></div>
+</section>
+
+<section id="rankings">
+  <h2>Michelin and Black Pearl</h2>
+  <p>Two rankings are worth knowing, and they answer different questions.</p>
+  <p><strong>MICHELIN Guide</strong> — international, stars and Bib Gourmand, published for Shanghai,
+  Guangzhou, Beijing, Chengdu and Hong Kong/Macau. Use the guide's own site or app; the starred list
+  is short and reliable, and the Bib Gourmand list is better value.</p>
+  <p><strong>Black Pearl <span class="zh">黑珍珠</span></strong> — China's own restaurant ranking,
+  run through Meituan and Dianping, graded one to three diamonds. It is the list Chinese diners
+  actually argue about, and it covers cities and cuisines Michelin does not. You will find it inside
+  Dianping or Meituan under the ranking entries.</p>
+  <div class="note"><strong>Which to trust</strong><p>Michelin for technique and service; Black Pearl
+  for what a well-off local family would book. They overlap less than you would think, and the
+  overlap is where the best meals are.</p></div>
+</section>
+
+<section id="ordering">
+  <h2>Ordering, once you are seated</h2>
+  <ul>
+    <li><strong>QR menus are normal.</strong> Scan the code on the table, order and pay in the app.
+    If it defeats you, ask for a paper menu — most places have one.</li>
+    <li><strong>Dishes arrive when they are ready,</strong> not in courses. Rice comes separately;
+    ask for it at the start if children are hungry.</li>
+    <li><strong>Tea is usually charged per person</strong>, and some restaurants add a service fee.
+    Both are normal.</li>
+    <li><strong>Say “not spicy” twice.</strong> <span class="zh">不要辣</span> — <em>bú yào là</em>.
+    In some kitchens “a little spicy” is still too much for a child.</li>
+    <li><strong>Order less than you think.</strong> Portions are generous and sharing is the norm;
+    adding a dish later is easy.</li>
+  </ul>
+</section>
+
+<section id="delivery">
+  <h2>Delivery to your hotel room</h2>
+  <p>Meituan <span class="zh">美团</span> and its delivery arm <span class="zh">美团外卖</span> will
+  bring restaurant food, groceries, pharmacy items and travel essentials to the hotel door, usually
+  within 30–45 minutes and often for less than a Western delivery fee.</p>
+  <ol class="steps">
+    <li><strong>Set the address to the hotel, not the room.</strong> Pin the building on the map, then
+    put the hotel name and your room number in the notes field. Riders navigate to pins, not to
+    addresses.</li>
+    <li><strong>Choose “meet in the lobby”.</strong> Many hotels will not let a rider upstairs, and the
+    rider will call — a call you cannot understand. Meet them at reception instead.</li>
+    <li><strong>Order earlier than you are hungry.</strong> 11:30 and 17:30 are the rush; a 12:15
+    order can arrive at 13:15.</li>
+    <li><strong>Pay in the app.</strong> Card or wallet, both work; no cash needed at the door.</li>
+    <li><strong>For medicine</strong>, use the pharmacy section <span class="zh">买药</span> — it
+    delivers over-the-counter items, and the listing states which pharmacy is sending.</li>
+  </ol>
+  <div class="note"><strong>What this solves</strong><p>A jet-lagged child, a rainy evening, a
+  grandparent who does not want another restaurant: delivery turns a bad hour into a normal one. It is
+  also how you buy a phone charger, nappies or bottled water at 11pm.</p></div>
+</section>
+
+<section id="more">
+  <h2>Where to eat, city by city</h2>
+  <p>This guide does not duplicate restaurant rankings. The curated list — one page per restaurant,
+  top-ten dishes from Dianping, prices and what to order — lives at
+  <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a>, covering Guangzhou, Hong Kong,
+  Shanghai and Shenzhen.</p>
+  <p>Use it as the shortlist, then use Dianping for the live details: opening hours, queue, and
+  whether the place is still as good as it was.</p>
+</section>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+      <div class="next"><a href="family.html">Next: travelling with children →</a><a href="changelog.html">Or see what changed →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>First Time China</strong> — a practical guide to Shanghai, Shenzhen and Hong Kong, written from a family trip with three generations: grandparents, parents and young children.</p>
+      <p>No advertising, no affiliate links, no sponsors. Prices are ranges rather than quotations, and anything that changes quickly is marked with the month it was checked.</p>
+    </div>
+    <div>
+      <p>Eating in these cities: <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a> — the restaurant list this guide points to.</p>
+      <p><a href="changelog.html">What changed, and when</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

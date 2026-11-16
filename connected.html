@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data, eSIMs and power — First Time China</title>
+<meta name="description" content="eSIM versus local SIM, sharing data with the family, what is blocked, why your power bank may be confiscated, and how to rent one instead.">
+<style>
+:root{
+  --paper:#fbf8f1; --ink:#17150f; --muted:#5d574c; --rule:#e3dccd;
+  --red:#a3382a; --jade:#2c6a5b; --sand:#f3eee2; --card:#ffffff;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+img{max-width:100%;height:auto}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(163,56,42,.3)}
+a:hover{border-bottom-color:var(--red)}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.prose{max-width:720px}
+.wrap>.prose{margin-left:0;margin-right:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--rule);background:rgba(251,248,241,.92);position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px}
+.brand{white-space:nowrap;font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em;color:var(--ink);border:0}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:.82rem;letter-spacing:.02em;color:var(--muted);padding:7px 9px;border:0;border-radius:6px}
+.nav a:hover{background:var(--sand);color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--sand)}
+
+/* hero */
+.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px;font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+.lede{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.checked{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--jade);border:1px solid rgba(44,106,91,.35);background:rgba(44,106,91,.06);padding:5px 11px;border-radius:99px}
+.checked::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+/* sections */
+main{padding:8px 0 40px}
+section{padding:38px 0;border-bottom:1px solid var(--rule)}
+section:last-child{border-bottom:0}
+h2{font-family:var(--serif);font-weight:400;font-size:1.62rem;margin:0 0 14px;letter-spacing:-.005em}
+h3{font-size:1.02rem;margin:26px 0 8px;font-weight:650}
+h4{font-size:.92rem;margin:18px 0 6px;font-weight:650}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 7px}
+small{font-size:.82rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:28px 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:22px 0 6px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px}
+.card .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600}
+.card h3{margin:0 0 6px;font-size:1rem;font-family:var(--serif);font-weight:600}
+.card p{font-size:.9rem;color:var(--muted);margin:0}
+.card a{display:block;color:inherit;border:0}
+.card a:hover h3{color:var(--red)}
+
+/* callouts */
+.note,.warn{border-left:3px solid var(--jade);background:rgba(44,106,91,.055);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:.92rem}
+.warn{border-left-color:var(--red);background:rgba(163,56,42,.05)}
+.note strong,.warn strong{display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.note strong{color:var(--jade)} .warn strong{color:var(--red)}
+.note p:last-child,.warn p:last-child{margin:0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.89rem}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--sand);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:650}
+td .zh{white-space:nowrap}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:18px 0;counter-reset:s}
+.steps li{position:relative;padding:0 0 16px 42px;margin:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.78rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.steps li::after{content:"";position:absolute;left:12px;top:30px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child::after{display:none}
+.steps strong{font-weight:650}
+
+/* misc */
+.zh{font-size:.95em;color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--muted);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.toc{columns:2;column-gap:34px;margin:18px 0}
+.toc a{display:block;padding:5px 0;border:0;font-size:.92rem;color:var(--ink)}
+.toc a:hover{color:var(--red)}
+@media(max-width:620px){.toc{columns:1}}
+.next{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.next a{font-size:.9rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{max-width:520px;margin:0 0 8px}
+footer a{border-bottom-color:rgba(163,56,42,.25)}
+
+@media(max-width:700px){
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:2px;padding-top:10px;padding-bottom:8px}
+  .nav{width:100%}
+  .nav a{padding:6px 7px;font-size:.78rem}
+  table{font-size:.82rem}
+  th,td{padding:8px 9px}
+  .tablewrap{-webkit-overflow-scrolling:touch}
+}
+@media print{
+  .site-head,.nav,.next{display:none}
+  body{background:#fff;font-size:11pt}
+  a{color:#000;border:0}
+  section{page-break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">First Time <span>China</span></a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Start</a><a href="prepare.html">Prepare</a><a href="apps.html">Apps</a><a href="money.html">Money</a><a href="transport.html">Getting around</a><a href="connected.html" aria-current="page">Data &amp; power</a><a href="eating.html">Eating</a><a href="family.html">With kids</a><a href="extras.html">Extras</a><a href="emergencies.html">Help</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Chapter 04 · Data & power</p>
+      <h1>Data, eSIMs and power</h1>
+      <p class="lede">Everything in this guide depends on a connected phone. Sort the data before you fly,
+    and bring a plan for charging that does not involve the battery in your suitcase.</p>
+      <span class="checked">Checked November 2026</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+
+<section id="esim">
+  <h2>eSIM, local SIM, or roaming</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Option</th><th>How</th><th>Good</th><th>Watch out</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Travel eSIM</strong></td><td>Buy before you fly (Trip.com, Airalo, Nomad and others); install by QR; activate on landing.</td><td>No shop, no queue, keeps your home number active for iMessage and bank codes.</td><td>Data-only — no local calls or SMS. Some plans throttle after a daily cap.</td></tr>
+      <tr><td><strong>Local SIM</strong></td><td>Buy at the airport or a carrier shop with your passport; registration is mandatory.</td><td>Cheapest data, and a Chinese number for apps that demand one.</td><td>Queue, paperwork, and your home number goes into a second slot.</td></tr>
+      <tr><td><strong>Home roaming</strong></td><td>Turn on your carrier's China pass.</td><td>Simplest; traffic routes outside the mainland, so familiar services keep working.</td><td>Expensive per day, and often throttled.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note"><strong>The one technical fact worth understanding</strong><p>Traffic on a
+  foreign eSIM or on home roaming is routed outside mainland China, so services that are blocked
+  locally — Google, WhatsApp, Instagram — usually keep working. A mainland SIM routes traffic
+  locally, so they do not. This single difference decides which option you want.</p></div>
+</section>
+
+<section id="share">
+  <h2>Sharing data with the family</h2>
+  <p>The simplest method is a <strong>personal hotspot</strong> from one phone. It works, it is free,
+  and the only cost is battery — which is why the power bank section below matters.</p>
+  <ul>
+    <li><strong>One phone as the hub.</strong> Choose the person least likely to wander off, and set a
+    hotspot name and password the children can remember.</li>
+    <li><strong>Turn the hotspot off when walking.</strong> It drains a phone roughly twice as fast as
+    normal use, and a dead hub means a family with no maps.</li>
+    <li><strong>Second phone as backup.</strong> Buy a small second data plan, or keep one phone on
+    home roaming. Do not let the whole family depend on a single battery.</li>
+    <li><strong>Download before you leave the hotel.</strong> Maps, addresses, tickets and this guide
+    should all be readable offline.</li>
+  </ul>
+</section>
+
+<section id="blocked">
+  <h2>What is blocked, and what to do</h2>
+  <p>On a mainland connection, Google services, WhatsApp, Instagram, Facebook and most Western news
+  sites are unreachable. Apple Maps, iMessage and email generally work. This is a fact of the
+  network, not a fault in your phone.</p>
+  <p>Practical approach: arrive with a foreign eSIM or roaming if you want those services, and
+  otherwise switch to the local equivalents — Amap for maps, WeChat for messages, Dianping for
+  reviews. Do not depend on a VPN for anything urgent: availability is unpredictable, and banking or
+  payment flows are a bad place to test it.</p>
+</section>
+
+<section id="vpn">
+  <h2>VPN: when to use one, and when to switch it off</h2>
+  <p>A VPN is useful for a narrow job: reaching Google, Gmail, WhatsApp, Instagram or a Western news
+  site while you are on a mainland connection. It is not a way of life, and it is not something to
+  leave running.</p>
+  <div class="warn"><strong>Turn it off before you pay</strong><p>Payment apps run risk checks on the
+  network you are connecting from. A proxy can make a normal payment look suspicious, and the failure
+  is confusing: the app simply declines. If a payment fails while a VPN is on, switch it off and try
+  again before assuming the card is the problem.</p></div>
+  <ul>
+    <li><strong>On demand, not always-on:</strong> enable it, check mail or post the photograph, then
+    disable it. Battery and reliability both improve.</li>
+    <li><strong>Do not use one for banking</strong> or anything involving a verification code. The
+    risk checks are stricter and the failure mode is worse.</li>
+    <li><strong>Download the app before you fly.</strong> VPN providers' sites are not reliably
+    reachable from inside China, and app stores may not serve them.</li>
+    <li><strong>Expect it to be unreliable.</strong> Availability changes week to week; never build a
+    day around needing one.</li>
+  </ul>
+  <p>After a few days the pattern inverts. Maps, payments, trains, food and messages all live in
+  Chinese apps that work perfectly without a VPN, and the Western services stop mattering. The
+  visitors who struggle are the ones who keep fighting the network instead of switching to the local
+  tools — open the VPN when you need it, close it when you are done, and let the phone become a
+  Chinese phone for the week.</p>
+  <div class="note"><strong>A word on rules</strong><p>Consumer VPN use sits in a legal grey area in
+  China, and enforcement varies. Businesses use approved international lines. Nothing here is advice
+  to break the law — it is how visitors commonly handle a practical problem, and you should make your
+  own call.</p></div>
+</section>
+
+<section id="power">
+  <h2>Power banks: the rule that surprises people</h2>
+  <p>Since mid-2025, Chinese aviation security requires power banks carried on flights to have a
+  <strong>3C certification mark</strong> and a capacity of <strong>100Wh or less</strong>. Power
+  banks without the mark — including many bought in Europe or America — are routinely confiscated at
+  airport security, and there is no argument to be had at the checkpoint.</p>
+  <div class="warn"><strong>Do not rely on your own battery</strong><p>If your power bank has no 3C
+  mark, assume it will not fly. Either leave it at home or accept losing it. The alternative is
+  better than the original: rent one.</p></div>
+
+  <h3>Renting instead</h3>
+  <p>China runs on shared power banks. They sit in cabinets in convenience stores, restaurants,
+  malls and metro stations, rented through WeChat or Alipay mini programs — usually a small deposit,
+  then a few yuan per hour, capped per day. Scan the QR on the cabinet, take a bank, and return it to
+  any cabinet of the same brand when you are done.</p>
+  <ul>
+    <li><strong>Return it before you leave the city.</strong> The deposit and the bill follow the
+    account, and returning in another city is not always possible.</li>
+    <li><strong>Check the cabinet has a free slot</strong> before you take one out — otherwise you
+    cannot return it.</li>
+    <li><strong>Carry a cable.</strong> The banks come with the battery, not always the cable you need.</li>
+  </ul>
+</section>
+
+<section id="plugs">
+  <h2>Plugs and voltage</h2>
+  <p>Mainland China uses 220V, 50Hz, with type A (two flat pins), type C (two round) and type I
+  (three slanted) sockets. Hong Kong uses the British type G. A universal adapter covers everything;
+  most hotels have USB outlets beside the bed, but not always enough for a family.</p>
+  <p>One useful item: a small multi-port charger with two USB-C ports. It replaces three wall
+  chargers and one argument about whose phone is charging.</p>
+</section>
+
+<section id="kit">
+  <h2>The small kit that earns its place</h2>
+  <ul>
+    <li><strong>Tissue pack</strong> — many public toilets have no paper. This is not a joke.</li>
+    <li><strong>Hand sanitiser</strong> — useful, and often missing in washrooms.</li>
+    <li><strong>A copy of your passport photo page</strong>, on paper and in photos.</li>
+    <li><strong>A card with your hotel's name and address in Chinese</strong>, in every pocket.</li>
+    <li><strong>One universal adapter and one multi-port charger.</strong></li>
+    <li><strong>A foldable shopping bag</strong> — plastic bags are chargeable and sometimes absent.</li>
+  </ul>
+</section>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+      <div class="next"><a href="eating.html">Next: eating well →</a><a href="transport.html">Back to getting around →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>First Time China</strong> — a practical guide to Shanghai, Shenzhen and Hong Kong, written from a family trip with three generations: grandparents, parents and young children.</p>
+      <p>No advertising, no affiliate links, no sponsors. Prices are ranges rather than quotations, and anything that changes quickly is marked with the month it was checked.</p>
+    </div>
+    <div>
+      <p>Eating in these cities: <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a> — the restaurant list this guide points to.</p>
+      <p><a href="changelog.html">What changed, and when</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

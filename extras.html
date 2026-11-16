@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small pleasures — First Time China</title>
+<meta name="description" content="Hiring a photographer at a tourist site, booking a hanfu or cosplay photo session, and finding bars and nightclubs in Shanghai, Shenzhen and Hong Kong.">
+<style>
+:root{
+  --paper:#fbf8f1; --ink:#17150f; --muted:#5d574c; --rule:#e3dccd;
+  --red:#a3382a; --jade:#2c6a5b; --sand:#f3eee2; --card:#ffffff;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
+img{max-width:100%;height:auto}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(163,56,42,.3)}
+a:hover{border-bottom-color:var(--red)}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.prose{max-width:720px}
+.wrap>.prose{margin-left:0;margin-right:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--rule);background:rgba(251,248,241,.92);position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px}
+.brand{white-space:nowrap;font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em;color:var(--ink);border:0}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:.82rem;letter-spacing:.02em;color:var(--muted);padding:7px 9px;border:0;border-radius:6px}
+.nav a:hover{background:var(--sand);color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--sand)}
+
+/* hero */
+.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px;font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+.lede{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.checked{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--jade);border:1px solid rgba(44,106,91,.35);background:rgba(44,106,91,.06);padding:5px 11px;border-radius:99px}
+.checked::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+/* sections */
+main{padding:8px 0 40px}
+section{padding:38px 0;border-bottom:1px solid var(--rule)}
+section:last-child{border-bottom:0}
+h2{font-family:var(--serif);font-weight:400;font-size:1.62rem;margin:0 0 14px;letter-spacing:-.005em}
+h3{font-size:1.02rem;margin:26px 0 8px;font-weight:650}
+h4{font-size:.92rem;margin:18px 0 6px;font-weight:650}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 7px}
+small{font-size:.82rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:28px 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:22px 0 6px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px}
+.card .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600}
+.card h3{margin:0 0 6px;font-size:1rem;font-family:var(--serif);font-weight:600}
+.card p{font-size:.9rem;color:var(--muted);margin:0}
+.card a{display:block;color:inherit;border:0}
+.card a:hover h3{color:var(--red)}
+
+/* callouts */
+.note,.warn{border-left:3px solid var(--jade);background:rgba(44,106,91,.055);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:.92rem}
+.warn{border-left-color:var(--red);background:rgba(163,56,42,.05)}
+.note strong,.warn strong{display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.note strong{color:var(--jade)} .warn strong{color:var(--red)}
+.note p:last-child,.warn p:last-child{margin:0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.89rem}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--sand);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:650}
+td .zh{white-space:nowrap}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:18px 0;counter-reset:s}
+.steps li{position:relative;padding:0 0 16px 42px;margin:0}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.78rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.steps li::after{content:"";position:absolute;left:12px;top:30px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child::after{display:none}
+.steps strong{font-weight:650}
+
+/* misc */
+.zh{font-size:.95em;color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--muted);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.toc{columns:2;column-gap:34px;margin:18px 0}
+.toc a{display:block;padding:5px 0;border:0;font-size:.92rem;color:var(--ink)}
+.toc a:hover{color:var(--red)}
+@media(max-width:620px){.toc{columns:1}}
+.next{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.next a{font-size:.9rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+footer p{max-width:520px;margin:0 0 8px}
+footer a{border-bottom-color:rgba(163,56,42,.25)}
+
+@media(max-width:700px){
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:2px;padding-top:10px;padding-bottom:8px}
+  .nav{width:100%}
+  .nav a{padding:6px 7px;font-size:.78rem}
+  table{font-size:.82rem}
+  th,td{padding:8px 9px}
+  .tablewrap{-webkit-overflow-scrolling:touch}
+}
+@media print{
+  .site-head,.nav,.next{display:none}
+  body{background:#fff;font-size:11pt}
+  a{color:#000;border:0}
+  section{page-break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">First Time <span>China</span></a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Start</a><a href="prepare.html">Prepare</a><a href="apps.html">Apps</a><a href="money.html">Money</a><a href="transport.html">Getting around</a><a href="connected.html">Data &amp; power</a><a href="eating.html">Eating</a><a href="family.html">With kids</a><a href="extras.html" aria-current="page">Extras</a><a href="emergencies.html">Help</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Chapter 07 · Extras</p>
+      <h1>Small pleasures</h1>
+      <p class="lede">Three things that cost little, take an hour, and become the photographs and stories
+    you actually bring home.</p>
+      <span class="checked">Checked November 2026</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+
+<section id="photographers">
+  <h2>Hire the photographer standing there</h2>
+  <p>At most major sights in China you will see photographers with a camera and a small display of
+  prints. They are not a scam and they are not expensive: typically <strong>¥100–300</strong> for a
+  set of edited photographs, delivered by WeChat or AirDrop within the hour.</p>
+  <p>The value is not the camera. It is that they know exactly where to stand, at what time, and how
+  to pose you — including the poses that make a family look relaxed rather than lined up against a
+  wall. You will get pictures nobody in your group could have taken of all of you together.</p>
+  <ul>
+    <li><strong>Agree first:</strong> price, number of photographs, edited or not, and how they will
+    be delivered. Show the numbers on your phone.</li>
+    <li><strong>Ask to see recent work</strong> on their phone before you start.</li>
+    <li><strong>Pay a deposit or the whole amount after</strong> — never before you see the files.</li>
+    <li><strong>Good locations:</strong> the Bund at dusk, Yu Garden, the West Lake causeways, Victoria
+    Peak, the Shenzhen bayfront.</li>
+  </ul>
+  <div class="note"><strong>Best hour of the trip</strong><p>Book the last hour of daylight. The light
+  is kind, the crowds thin, and you end the day with photographs instead of another restaurant
+  receipt.</p></div>
+</section>
+
+<section id="cosplay">
+  <h2>Hanfu and cosplay photo sessions</h2>
+  <p>Period-costume photography is a mainstream Chinese pastime, not a niche hobby. Studios rent
+  <strong>hanfu</strong> <span class="zh">汉服</span> or Republican-era dress, do hair and make-up, and
+  shoot you in a historic quarter for an hour or two. Packages typically run
+  <strong>¥200–600</strong> including costume, styling and a set of retouched images.</p>
+  <ul>
+    <li><strong>Where:</strong> historic districts and water towns — Yuyuan and Zhujiajiao in Shanghai,
+    the old streets of Suzhou and Hangzhou, and photo studios around them.</li>
+    <li><strong>Booking:</strong> walk in, or find them on Dianping under photography
+    <span class="zh">写真</span>; hotel concierges know the good ones.</li>
+    <li><strong>Time:</strong> allow two to three hours, most of it hair and make-up.</li>
+    <li><strong>Children love it</strong>, and a family group in matching costume is a photograph you
+    will keep.</li>
+  </ul>
+  <p>Cosplay of a different kind — anime, games, film characters — clusters around comic conventions
+  and specific shopping districts. If that is the interest, ask the hotel where the nearest
+  <span class="zh">漫展</span> or costume studio is, or search Xiaohongshu for the city plus the
+  character.</p>
+</section>
+
+<section id="nightlife">
+  <h2>Bars and clubs</h2>
+  <p>Nightlife is concentrated, late and largely found through Chinese apps rather than English
+  websites.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>City</th><th>Where to start</th><th>Character</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Shanghai</strong></td><td>Jing'an, around Found 158 and the streets off Nanjing West Road; the Bund for cocktail bars with a view</td><td>Cocktail culture, rooftop bars, clubs that fill after 11pm</td></tr>
+      <tr><td><strong>Shenzhen</strong></td><td>Coco Park in Futian; Sea World in Shekou</td><td>Younger, louder, more casual; expat-friendly in Shekou</td></tr>
+      <tr><td><strong>Hong Kong</strong></td><td>Lan Kwai Fong and SoHo, Central; Knutsford Terrace in Tsim Sha Tsui</td><td>Late, international, easy to navigate in English</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>How to find something specific</h3>
+  <ul>
+    <li><strong>Dianping</strong> — the nightlife category <span class="zh">酒吧</span> or
+    <span class="zh">夜店</span>, sorted by rating; photographs and reviews tell you the dress code
+    faster than any English list.</li>
+    <li><strong>Xiaohongshu</strong> <span class="zh">小红书</span> — where young Chinese plan nights
+    out. Search the city plus “bar” and translate the results.</li>
+    <li><strong>The concierge</strong> — for guest lists, tables and whether a place is still good this
+    month. Clubs change names and owners quickly.</li>
+    <li><strong>Meituan</strong> — for table packages and drink deals, often cheaper than the door.</li>
+  </ul>
+  <h3>Practical notes</h3>
+  <ul>
+    <li><strong>Bring your passport.</strong> Clubs and some bars check ID, and a foreign licence is
+    not always accepted.</li>
+    <li><strong>Watch your drink</strong>, as you would anywhere, and stay with your group.</li>
+    <li><strong>Agree the taxi or DiDi home before midnight</strong> — surge and availability both get
+    worse after 2am.</li>
+    <li><strong>KTV</strong> <span class="zh">KTV</span> is the other national night out: a private
+    room, a screen, food and singing. Book a room for the family early evening; it is sober, fun and
+    works with children.</li>
+  </ul>
+</section>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="prose">
+      <div class="next"><a href="emergencies.html">Next: when something goes wrong →</a><a href="index.html">Back to the start →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>First Time China</strong> — a practical guide to Shanghai, Shenzhen and Hong Kong, written from a family trip with three generations: grandparents, parents and young children.</p>
+      <p>No advertising, no affiliate links, no sponsors. Prices are ranges rather than quotations, and anything that changes quickly is marked with the month it was checked.</p>
+    </div>
+    <div>
+      <p>Eating in these cities: <a href="https://ktamxl.github.io/kens-table/">Ken's Table</a> — the restaurant list this guide points to.</p>
+      <p><a href="changelog.html">What changed, and when</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
